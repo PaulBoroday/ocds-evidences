@@ -1,0 +1,65 @@
+{
+  "definitions":{
+    "Requirement":{
+      "properties":{
+        "eligibleEvidences":{
+          "title":"",
+          "description":"",
+          "type":"array",
+          "items":{
+            "$ref":"#/definitions/EligibleEvidence"
+          }
+        }
+      }
+    },
+    "EligibleEvidence": {
+      "title": "Evidance",
+      "description": "The data set describing some evidence",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "description": "Unique identifier for this evidence",
+          "type": "string"
+        },
+        "type":{
+          "title":"",
+          "description":"",
+          "type":"string",
+          "enum":[
+            "achievedValue",
+            "document",
+            "statement",
+            "reference"
+          ]
+        },
+        "attribute": {
+          "title": "Attribute",
+          "descrpption": "The attribute of the object indicated with criterion.source for wich the value an exepcted will be considered as an evidence",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "description": "Value which is expected as an evidence",
+          "type": [
+            "string",
+            "number",
+            "integer",
+            "boolean"
+          ]
+        },
+        "relatesTo": {
+          "title": "Relates to",
+          "description": "Where several evidences are expected to satisfy this evidence, the related tye of the source has to be specified here",
+          "type": "string"
+        },
+        "relatedItem": {
+          "title": "Related Item ID",
+          "description": "Where 'relatesTo' is used, the precise unique id of the source has to be specified here",
+          "type": "string"
+        }
+      }
+    },
+    "Evidence":{}
+  }
+}
