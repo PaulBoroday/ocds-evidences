@@ -24,7 +24,7 @@
         }
       }
     },
-    "eligibleEvidence": {
+    "EligibleEvidence": {
       "title": "Evidance",
       "description": "The data set describing some evidence",
       "type": "object",
