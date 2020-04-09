@@ -1,18 +1,30 @@
 {
-  "definitions":{
-    "Requirement":{
-      "properties":{
-        "eligibleEvidences":{
-          "title":"",
-          "description":"",
-          "type":"array",
-          "items":{
-            "$ref":"#/definitions/EligibleEvidence"
+  "definitions": {
+    "Requirement": {
+      "properties": {
+        "eligibleEvidences": {
+          "title": "",
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EligibleEvidence"
           }
         }
       }
     },
-    "EligibleEvidence": {
+    "RequirementResponse": {
+      "properties": {
+        "evidences": {
+          "title": "",
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Evidence"
+          }
+        }
+      }
+    },
+    "eligibleEvidence": {
       "title": "Evidance",
       "description": "The data set describing some evidence",
       "type": "object",
@@ -22,23 +34,44 @@
           "description": "Unique identifier for this evidence",
           "type": "string"
         },
-        "type":{
-          "title":"",
-          "description":"",
-          "type":"string",
-          "enum":[
+        "type": {
+          "title": "",
+          "description": "",
+          "type": "string",
+          "enum": [
             "achievedValue",
             "document",
             "statement",
             "reference"
-          ]
+          ],
+          "opencodelist": true
         },
         "attribute": {
           "title": "Attribute",
-          "descrpption": "The attribute of the object indicated with criterion.source for wich the value an exepcted will be considered as an evidence",
+          "descrption": "The attribute of the object indicated with criterion.source for wich the value an exepcted will be considered as an evidence",
           "type": "string"
         },
-        "value": {
+        "minValue": {
+          "title": "",
+          "description": "",
+          "type": [
+            "string",
+            "number",
+            "integer",
+            "boolean"
+          ]
+        },
+        "maxValue": {
+          "title": "",
+          "description": "",
+          "type": [
+            "string",
+            "number",
+            "integer",
+            "boolean"
+          ]
+        },
+        "expectedValue": {
           "title": "Value",
           "description": "Value which is expected as an evidence",
           "type": [
@@ -50,7 +83,7 @@
         },
         "relatesTo": {
           "title": "Relates to",
-          "description": "Where several evidences are expected to satisfy this evidence, the related tye of the source has to be specified here",
+          "description": "Where several evidences are expected to satisfy this evidence, the related type of the source has to be specified here",
           "type": "string"
         },
         "relatedItem": {
@@ -60,6 +93,11 @@
         }
       }
     },
-    "Evidence":{}
+    "Evidence": {
+      "title": "",
+      "description": "",
+      "type": "object",
+      "properties": {}
+    }
   }
 }
