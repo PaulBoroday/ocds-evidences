@@ -34,6 +34,16 @@
           "description": "Unique identifier for this evidence",
           "type": "string"
         },
+        "title": {
+          "title": "",
+          "description": "",
+          "type": ""
+        },
+        "description": {
+          "title": "",
+          "description": "",
+          "type": ""
+        },
         "type": {
           "title": "",
           "description": "",
@@ -97,7 +107,38 @@
       "title": "",
       "description": "",
       "type": "object",
-      "properties": {}
+      "properties": {
+        "id": {
+          "title": "",
+          "description": "",
+          "type": ""
+        },
+        "type": {
+          "title": "",
+          "description": "",
+          "type": "string",
+          "enum": [
+            "statement",
+            "document",
+            "reference"
+          ]
+        },
+        "title": {
+          "title": "",
+          "description": "",
+          "type": ""
+        },
+        "description": {
+          "title": "",
+          "description": "",
+          "type": ""
+        },
+        "relatedDocument": {
+          "title": "",
+          "description": "",
+          "$ref": "#/definitions/Document"
+        }
+      }
     }
   }
 }
